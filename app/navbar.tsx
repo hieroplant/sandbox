@@ -5,7 +5,6 @@ import { AiFillBug } from 'react-icons/ai';
 import { usePathname } from 'next/navigation';
 import classNames from 'classnames';
 
-
 const NavBar = () => {
 
     const currentPath = usePathname();
@@ -13,6 +12,9 @@ const NavBar = () => {
     const links = [
         {
             label: 'Dashboard', href: '/' 
+        },
+        {
+            label: 'Project', href: '/project'
         },
         {
             label: 'Actuator', href: '/actuator'
@@ -30,7 +32,6 @@ const NavBar = () => {
                                 'text-zinc-900': link.href === currentPath,
                                 'text-zinc-500': link.href !== currentPath,
                                 'hover:text-zinc-800 transition-colors': true
-
                             })}
                             href={link.href}>
                             {link.label}
@@ -40,6 +41,6 @@ const NavBar = () => {
             </ul>
         </nav>
     );
-}
+};
 
 export default NavBar;
